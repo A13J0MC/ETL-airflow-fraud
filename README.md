@@ -1,7 +1,7 @@
 Overview
 ========
 
-![Diagrama de flujo](include\images\diagrama_ELT.png) 
+![Diagrama de flujo](src/diagrama_ELT.png) 
 Welcome to this hands-on repository to get started with [Apache Airflow](https://airflow.apache.org/)! :rocket:
 
 This repository contains a fully functional best practice Airflow ELT pipeline that can be run in GitHub codespaces (or locally with the [Astro CLI](https://docs.astronomer.io/astro/cli/install-cli)). 
