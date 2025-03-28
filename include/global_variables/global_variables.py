@@ -26,16 +26,29 @@ MINIO_SECRET_KEY = "minioadmin"
 MINIO_IP = "host.docker.internal:9000"
 WEATHER_BUCKET_NAME = "weather"
 CLIMATE_BUCKET_NAME = "climate"
+CLIENT_BUCKET_NAME = 'client'
+TRANS_BUCKET_NAME = 'transaction'
+REDE_BUCKET_NAME = 'redemption'
+FRAUD_BUCKET_NAME = 'fraud'
 ARCHIVE_BUCKET_NAME = "archive"
 
 # Source file path climate data
 TEMP_GLOBAL_PATH = f"{os.environ['AIRFLOW_HOME']}/include/climate_data/temp_global.csv"
+DATA_GLOBAL_PATH = f"{os.environ['AIRFLOW_HOME']}/include/loyalty_data"
 
 # Datasets
 DS_CLIMATE_DATA_MINIO = Dataset(f"minio://{CLIMATE_BUCKET_NAME}")
 DS_WEATHER_DATA_MINIO = Dataset(f"minio://{WEATHER_BUCKET_NAME}")
+DS_CLIENT_DATA_MINIO = Dataset(f"minio://{CLIENT_BUCKET_NAME}")
+DS_TRANS_DATA_MINIO = Dataset(f"minio://{TRANS_BUCKET_NAME}")
+DS_REDE_DATA_MINIO = Dataset(f"minio://{REDE_BUCKET_NAME}")
+DS_FRAUD_DATA_MINIO = Dataset(f"minio://{FRAUD_BUCKET_NAME}")
 DS_DUCKDB_IN_WEATHER = Dataset("duckdb://in_weather")
 DS_DUCKDB_IN_CLIMATE = Dataset("duckdb://in_climate")
+DS_DUCKDB_IN_CLIENT = Dataset("duckdb://in_client")
+DS_DUCKDB_IN_TRANS = Dataset("duckdb://in_transaction")
+DS_DUCKDB_IN_REDE = Dataset("duckdb://in_redemption")
+DS_DUCKDB_IN_FRAUD = Dataset("duckdb://in_fraud")
 DS_DUCKDB_REPORTING = Dataset("duckdb://reporting")
 DS_START = Dataset("start")
 
@@ -70,4 +83,4 @@ def get_minio_client():
 
 # command to run streamlit app within codespaces/docker
 # modifications are necessary to support double-port-forwarding
-STREAMLIT_COMMAND = "streamlit run weather_v_climate_app.py --server.enableWebsocketCompression=false --server.enableCORS=false"
+STREAMLIT_COMMAND = "streamlit run loyalty_app.py --server.enableWebsocketCompression=false --server.enableCORS=false"

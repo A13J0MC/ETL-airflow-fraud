@@ -1,0 +1,50 @@
+evento_id,cliente_id,fecha_evento,tipo_evento,descripcion
+1,433,2023-05-11,intento de fraude,Evento de intento de fraude detectado.
+2,291,2025-02-01,transacción inusual,Evento de transacción inusual detectado.
+3,4,2025-02-13,transacción inusual,Evento de transacción inusual detectado.
+4,431,2023-07-21,transacción inusual,Evento de transacción inusual detectado.
+5,309,2024-11-25,transacción inusual,Evento de transacción inusual detectado.
+6,166,2024-10-07,transacción inusual,Evento de transacción inusual detectado.
+7,388,2024-05-30,intento de fraude,Evento de intento de fraude detectado.
+8,60,2024-01-05,transacción inusual,Evento de transacción inusual detectado.
+9,76,2024-12-04,intento de fraude,Evento de intento de fraude detectado.
+10,449,2023-12-29,intento de fraude,Evento de intento de fraude detectado.
+11,113,2025-01-06,anomalía en comportamiento,Evento de anomalía en comportamiento detectado.
+12,87,2023-04-14,intento de fraude,Evento de intento de fraude detectado.
+13,234,2023-10-12,transacción inusual,Evento de transacción inusual detectado.
+14,415,2023-09-07,transacción inusual,Evento de transacción inusual detectado.
+15,25,2024-12-22,transacción inusual,Evento de transacción inusual detectado.
+16,146,2025-01-24,transacción inusual,Evento de transacción inusual detectado.
+17,475,2023-12-23,anomalía en comportamiento,Evento de anomalía en comportamiento detectado.
+18,419,2024-04-17,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
+19,419,2025-03-04,transacción inusual,Evento de transacción inusual detectado.
+20,414,2023-05-25,transacción inusual,Evento de transacción inusual detectado.
+21,317,2024-08-30,transacción inusual,Evento de transacción inusual detectado.
+22,87,2024-10-16,transacción inusual,Evento de transacción inusual detectado.
+23,51,2024-04-16,transacción inusual,Evento de transacción inusual detectado.
+24,461,2025-02-03,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
+25,377,2025-01-08,transacción inusual,Evento de transacción inusual detectado.
+26,333,2024-09-24,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
+27,76,2024-02-14,anomalía en comportamiento,Evento de anomalía en comportamiento detectado.
+28,491,2024-11-21,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
+29,191,2024-03-28,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
+30,228,2025-01-09,transacción inusual,Evento de transacción inusual detectado.
+31,368,2023-06-08,intento de fraude,Evento de intento de fraude detectado.
+32,226,2023-12-07,intento de fraude,Evento de intento de fraude detectado.
+33,290,2024-01-26,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
+34,359,2024-09-04,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
+35,4,2024-03-27,transacción inusual,Evento de transacción inusual detectado.
+36,214,2024-10-09,anomalía en comportamiento,Evento de anomalía en comportamiento detectado.
+37,311,2024-03-09,intento de fraude,Evento de intento de fraude detectado.
+38,418,2024-12-14,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
+39,130,2025-01-06,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
+40,178,2023-05-31,anomalía en comportamiento,Evento de anomalía en comportamiento detectado.
+41,110,2024-04-02,anomalía en comportamiento,Evento de anomalía en comportamiento detectado.
+42,193,2023-10-02,intento de fraude,Evento de intento de fraude detectado.
+43,260,2025-01-21,intento de fraude,Evento de intento de fraude detectado.
+44,463,2024-02-23,intento de fraude,Evento de intento de fraude detectado.
+45,133,2024-05-15,anomalía en comportamiento,Evento de anomalía en comportamiento detectado.
+46,312,2023-10-31,anomalía en comportamiento,Evento de anomalía en comportamiento detectado.
+47,206,2023-11-09,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
+48,462,2024-07-23,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
+49,25,2023-08-14,uso múltiple de cuentas,Evento de uso múltiple de cuentas detectado.
