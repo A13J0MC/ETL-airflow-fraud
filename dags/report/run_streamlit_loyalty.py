@@ -21,7 +21,7 @@ from include.global_variables import global_variables as gv
 
 @dag(
     start_date=datetime(2023, 1, 1),
-    schedule=None,
+    schedule=[gv.DS_DUCKDB_IN_CLIENT, gv.DS_DUCKDB_IN_TRANS, gv.DS_DUCKDB_IN_REDE, gv.DS_DUCKDB_IN_FRAUD],
     catchup=False,
     default_args=gv.default_args,
     # this DAG will time out after one hour

@@ -16,64 +16,65 @@ from utils import sql_1, sql_2, sql_3, sql_4, sql_5
 # VARIABLES #
 # --------- #
 
-duck_db_instance_name = (
-    "dwh"  # when changing this value also change the db name in .env
-)
+# duck_db_instance_name = (
+#     "dwh"  # when changing this value also change the db name in .env
+# )
 
 
-# retrieving data
-def client_data(db=f"/usr/local/airflow/{duck_db_instance_name}"):
-    """Function to query a local DuckDB data processed through
-    the data pipeline."""
+# # retrieving data
+# def client_data(db=f"/usr/local/airflow/{duck_db_instance_name}"):
+#     """Function to query a local DuckDB data processed through
+#     the data pipeline."""
 
-    # Query duckdb database `dwh`
-    cursor = duckdb.connect(db)
+#     # Query duckdb database `dwh`
+#     cursor = duckdb.connect(db)
 
-    # get local weather data
-    client_data = cursor.execute(
-        """
-        with
-        transacciones as (
-            SELECT
-                date_trunc('month', fecha_transaccion) mes
-                , count(*) cantidad_transacciones
-                , sum(puntos_ganados) puntos_ganados
-            FROM transacciones_table
-            where fecha_transaccion::date >= CURRENT_DATE - INTERVAL '1 year'
-            group by 1
-        )
-        , eventos_fraude as (
-            SELECT
-                date_trunc('month', fecha_evento) mes
-                , count(*) cantidad_eventos_fraude
-            from eventos_fraude_table
-            where fecha_evento::date >= CURRENT_DATE - INTERVAL '1 year'
-            group by 1
-        )
-        SELECT t.*, e.cantidad_eventos_fraude
-        FROM transacciones t
-        LEFT JOIN eventos_fraude e on t.mes = e.mes
-        ;"""
-    ).fetchall()
+#     # get local weather data
+#     client_data = cursor.execute(
+#         """
+#         with
+#         transacciones as (
+#             SELECT
+#                 date_trunc('month', fecha_transaccion) mes
+#                 , count(*) cantidad_transacciones
+#                 , sum(puntos_ganados) puntos_ganados
+#             FROM transacciones_table
+#             where fecha_transaccion::date >= CURRENT_DATE - INTERVAL '1 year'
+#             group by 1
+#         )
+#         , eventos_fraude as (
+#             SELECT
+#                 date_trunc('month', fecha_evento) mes
+#                 , count(*) cantidad_eventos_fraude
+#             from eventos_fraude_table
+#             where fecha_evento::date >= CURRENT_DATE - INTERVAL '1 year'
+#             group by 1
+#         )
+#         SELECT t.*, e.cantidad_eventos_fraude
+#         FROM transacciones t
+#         LEFT JOIN eventos_fraude e on t.mes = e.mes
+#         ;"""
+#     ).fetchall()
 
-    # client_data_col_names = cursor.execute(
-    #     f"""SELECT column_name from information_schema.columns where table_name = 'clientes_table';"""
-    # ).fetchall()
+#     # client_data_col_names = cursor.execute(
+#     #     f"""SELECT column_name from information_schema.columns where table_name = 'clientes_table';"""
+#     # ).fetchall()
 
-    cursor.close()
+#     cursor.close()
 
-    # df = pd.DataFrame(
-    #     client_data, columns=[x[0] for x in client_data_col_names]
-    # )
+#     # df = pd.DataFrame(
+#     #     client_data, columns=[x[0] for x in client_data_col_names]
+#     # )
 
-    return client_data
+#     return client_data
 
 
-data = client_data()
-st.write(data)
+# data = client_data()
+# st.write(data)
 # Título de la aplicación
 st.title("Prueba Técnica: BI Data Engineer - Resultados")
 
+st.write("Repo ETL https://github.com/A13J0MC/ETL-airflow-fraud")
 # Introducción a la prueba
 st.header("Descripción de la prueba técnica")
 st.write("""
@@ -133,6 +134,8 @@ El candidato debe realizar un proceso de ETL (Extract, Transform, Load) para exp
    - Crear un script que genere un reporte automatizado en formato PDF o HTML con los resultados del análisis.
 """)
 
+st.write("""El siguiente link muestra el procedimiento realizado https://colab.research.google.com/drive/131JIWPKaufnvE2V_gaM_GK-fexCSlxhf?usp=sharing """)
+
 # Desafío 3: Ingeniería de Datos
 st.header("3. Desafío de Ingeniería de Datos")
 st.write("""
@@ -160,7 +163,11 @@ Se muestra el diagrama del ETL utilizado. Este consta de las siguientes etapas t
 - **Cosumo**: Se refleja la información y reporteria directamente en Streamlit
 
 Acontinuación se muestra el flujo usado por Airflow para la ejecución del ELT
+""")
 
+st.image("dataset_flow.png", caption="Diagrama ELT", use_container_width=True)
+
+st.write("""
 **Consideraciones Escalabilidad y seguridad**:
 
 **Escalabilidad**

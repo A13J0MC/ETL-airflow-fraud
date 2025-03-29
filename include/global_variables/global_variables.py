@@ -37,13 +37,10 @@ DS_CLIENT_DATA_MINIO = Dataset(f"minio://{CLIENT_BUCKET_NAME}")
 DS_TRANS_DATA_MINIO = Dataset(f"minio://{TRANS_BUCKET_NAME}")
 DS_REDE_DATA_MINIO = Dataset(f"minio://{REDE_BUCKET_NAME}")
 DS_FRAUD_DATA_MINIO = Dataset(f"minio://{FRAUD_BUCKET_NAME}")
-DS_DUCKDB_IN_WEATHER = Dataset("duckdb://in_weather")
-DS_DUCKDB_IN_CLIMATE = Dataset("duckdb://in_climate")
 DS_DUCKDB_IN_CLIENT = Dataset("duckdb://in_client")
 DS_DUCKDB_IN_TRANS = Dataset("duckdb://in_transaction")
 DS_DUCKDB_IN_REDE = Dataset("duckdb://in_redemption")
 DS_DUCKDB_IN_FRAUD = Dataset("duckdb://in_fraud")
-DS_DUCKDB_REPORTING = Dataset("duckdb://reporting")
 DS_START = Dataset("start")
 
 # DuckDB config
