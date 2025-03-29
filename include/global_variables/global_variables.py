@@ -13,8 +13,7 @@ import json
 # Enter your own info! #
 # -------------------- #
 
-MY_NAME = "Friend"
-MY_CITY = "Portland"
+MY_NAME = "alejandro.mendoza"
 
 # ----------------------- #
 # Configuration variables #
@@ -24,8 +23,6 @@ MY_CITY = "Portland"
 MINIO_ACCESS_KEY = "minioadmin"
 MINIO_SECRET_KEY = "minioadmin"
 MINIO_IP = "host.docker.internal:9000"
-WEATHER_BUCKET_NAME = "weather"
-CLIMATE_BUCKET_NAME = "climate"
 CLIENT_BUCKET_NAME = 'client'
 TRANS_BUCKET_NAME = 'transaction'
 REDE_BUCKET_NAME = 'redemption'
@@ -33,12 +30,9 @@ FRAUD_BUCKET_NAME = 'fraud'
 ARCHIVE_BUCKET_NAME = "archive"
 
 # Source file path climate data
-TEMP_GLOBAL_PATH = f"{os.environ['AIRFLOW_HOME']}/include/climate_data/temp_global.csv"
 DATA_GLOBAL_PATH = f"{os.environ['AIRFLOW_HOME']}/include/loyalty_data"
 
 # Datasets
-DS_CLIMATE_DATA_MINIO = Dataset(f"minio://{CLIMATE_BUCKET_NAME}")
-DS_WEATHER_DATA_MINIO = Dataset(f"minio://{WEATHER_BUCKET_NAME}")
 DS_CLIENT_DATA_MINIO = Dataset(f"minio://{CLIENT_BUCKET_NAME}")
 DS_TRANS_DATA_MINIO = Dataset(f"minio://{TRANS_BUCKET_NAME}")
 DS_REDE_DATA_MINIO = Dataset(f"minio://{REDE_BUCKET_NAME}")
@@ -54,9 +48,6 @@ DS_START = Dataset("start")
 
 # DuckDB config
 DUCKDB_INSTANCE_NAME = json.loads(os.environ["AIRFLOW_CONN_DUCKDB_DEFAULT"])["host"]
-WEATHER_IN_TABLE_NAME = "in_weather"
-CLIMATE_TABLE_NAME = "temp_global_table"
-REPORTING_TABLE_NAME = "reporting_table"
 CONN_ID_DUCKDB = "duckdb_default"
 
 # get Airflow task logger
@@ -69,9 +60,6 @@ default_args = {
     "retries": 2,
     "retry_delay": duration(minutes=5),
 }
-
-# default coordinates
-default_coordinates = {"city": "No city provided", "lat": 0, "long": 0}
 
 
 # utility functions
