@@ -25,19 +25,11 @@ Download the [Astro CLI](https://docs.astronomer.io/astro/cli/install-cli) to ru
 1. Unpause all DAGs, starting top to bottom, by clicking on the toggle on their left hand side. Once the `start` DAG is unpaused it will run once, starting the pipeline. You can also run this DAG manually to trigger further pipeline runs by clicking on the play button on the right side of the DAG.
 4. Watch the DAGs run according to their dependencies which have been set using [Datasets](https://docs.astronomer.io/learn/airflow-datasets).
 
-    ![Dataset and DAG Dependencies](src/dataset_dag_dependency.png)
-
 5. The last DAG in the pipeline `run_streamlit_app`, will stay in a running state as shown in the screenshot below.
-
-    ![DAGs view after first run](src/click_on_run_streamlit.png)
 
 6. Open the Streamlit app. If you are using codespaces go to the **Ports** tab and open the URL of the forwarded port `8501`. If you are running locally go to `localhost:8501`.
 
-    ![Open Streamlit URL Codespaces](src/open_streamlit_codespaces.png)
-
 7. View the Streamlit app.
-
-    ![Streamlit app](src/streamlit_app.png)
 
 -------------------------------
 
